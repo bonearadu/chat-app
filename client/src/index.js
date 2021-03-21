@@ -1,12 +1,20 @@
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Chat from './Chat.js';
+import Home from './Home.js';
 
-function Hello() {
+function PageManager() {
   return(
-    <p>Hello, World!</p>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/chat" component={Chat} />
+        <Route path="/" component={Home} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
 ReactDOM.render(
-  <Hello />, 
+  <PageManager />,
   document.getElementById("root")
 );
