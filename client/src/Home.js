@@ -6,7 +6,7 @@ const submitId = 'submit';
 
 function UsernameForm() {
   const [username, setUsername] = React.useState('');
-  
+
   const handleSubmit = event => {
     event.preventDefault();
   }
@@ -15,7 +15,7 @@ function UsernameForm() {
     setUsername(event.target.value);
   }
 
-  return(
+  return (
     <form
       noValidate
       autoComplete='off'
@@ -42,7 +42,7 @@ function UsernameForm() {
             disabled={username === '' ? true : false}
           >
             Log in
-          </Button>
+            </Button>
         </Grid>
       </Grid>
     </form>
@@ -50,7 +50,7 @@ function UsernameForm() {
 }
 
 export default function Home() {
-  return(
+  return (
     <Grid
       container
       direction='column'
