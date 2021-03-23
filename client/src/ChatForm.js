@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import { Button, Grid, TextField } from '@material-ui/core';
+import perform from './Controller';
 
 const messageId = 'message';
 const sendId = 'send';
 
 // Form for submitting a message to the chat.
-export default function ChatForm({ bgRef }) {
+export default function ChatForm() {
   const [text, setText] = useState('');
   const user = new URLSearchParams(window.location.search).get('user');
 
+  // Performs the 'sendMessage' action and clears the text field.
   const handleSubmit = event => {
     event.preventDefault();
     document.getElementById(messageId).value = '';
-    const bubbleGroup = bgRef.current;
-    const messages = bubbleGroup.state.messages;
-    messages.push({user: user, content: text});
-    bubbleGroup.setState({messages: messages});
+    perform(
+      'sendMessage', { user: user, content: text });
     setText('');
   };
 

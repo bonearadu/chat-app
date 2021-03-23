@@ -4,6 +4,7 @@ import Chat from './Chat.js';
 import Home from './Home.js';
 import './style.css';
 
+// Handles routing for the front end of the app.
 function PageManager() {
   return(
     <BrowserRouter>

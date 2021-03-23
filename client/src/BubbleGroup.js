@@ -13,8 +13,8 @@ export default class BubbleGroup extends Component {
   render() {
     const bubbles = this.state.messages.map(
       message => <ChatBubble user={message.user} content={message.content} />);
-    
-    return(
+
+    return (
       <Fragment>
         {bubbles}
       </Fragment>
